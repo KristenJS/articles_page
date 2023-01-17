@@ -1,0 +1,186 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+*,*:before,*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fcfcfc;
+  margin: 0;
+}
+
+.container {
+  margin: 50px 75px;
+}
+
+@mixin button {
+  min-width: 110px;
+  text-transform: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #363636;
+  margin-bottom: 15px;
+}
+
+.filterTitle{
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #363636;
+}
+
+.filterField {
+  box-sizing: border-box;
+  width: 600px;
+  max-width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.box {
+  margin-top: 40px;
+  .boxResult {
+    margin: 0px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #363636;
+  }
+  .grid {
+    margin-top: -5px;
+  }
+}
+
+.card {
+  height: 100%;
+  .cardMedia {
+    height: 217px;
+  }
+  .cardContent{
+    padding: 0 25px;
+    .contentTitle {
+      max-width: 350px;
+      margin-bottom: 20px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 29px;
+      color: #363636
+    }
+    .contentText {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #363636;
+      margin-bottom: 20px;
+    }
+    .contentData {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      margin: 25px 0 24px;
+    }
+  }
+  .cardActions {
+    padding: 0 25px;
+    button {
+      @include button
+    }
+    button:hover {
+      background-color: #efefef;
+    }
+  }
+}
+
+.articleContainer {
+  button {
+    @include button;
+    margin-left: 50px;
+  }
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+  }
+  .articleTitle{
+    margin: 0px 0px 40px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #363636;
+  }
+  .articleImage {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+  }
+ .articleContent {
+    padding: 35px 50px;
+    margin-top: -130px;
+    margin-bottom: 35px;
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+  }
+}
+
+.loader {
+  margin: 5px auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px dashed dimgrey;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.4);
+  }
+}
+
+// @media
+@media (max-width: $breakpoint_xl) {
+  .card .cardContent .contentTitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: $breakpoint_sm) {
+  .container {
+    margin: 50px 30px;
+  }
+  .card .cardContent .contentData {
+    margin-bottom: -15px;
+  }
+  .articleContainer {
+    p {
+      font-size: 15px;
+    }
+    .articleTitle {
+      margin: 0px 0px 20px;
+      font-size: 20px;
+    }
+    .articleContent {
+      padding: 30px 40px;
+    }
+  }
+}
